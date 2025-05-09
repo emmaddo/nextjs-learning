@@ -3,12 +3,18 @@ import React, {useState} from 'react';
 
 export default function ContactForm(){
     const [fullname, setFullName] = useState<string>('');
-    const [buttonText, setbuttonText] = useState<string>('Submit Form');
-
+    const [isLoading, setisLoading] = useState<boolean>(false);
     const processForm = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        setbuttonText('Loading');
+        setisLoading(true);
         console.log(`The inputted name is ${fullname}`);
+
+        //micking an api call using setTimeout for demo
+        setTimeout(() => {
+            console.log(`A timeout just occured`); 
+            setisLoading(false);
+        }
+            ,1000);
     }
 
     const processFullName = (e:React.ChangeEvent<HTMLInputElement>) => {
@@ -30,7 +36,7 @@ return(
     </label>
 </div>
 <div>
-    <button className='bg-blue-600 text-white rounded m-4 p-4' type="submit">{buttonText}</button>
+    <button className='bg-blue-600 text-white rounded m-4 p-4' type="submit">{isLoading ? 'Loading': 'Submit Form'}</button>
 </div>
         </form>
     </div>
