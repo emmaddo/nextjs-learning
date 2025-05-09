@@ -3,9 +3,11 @@ import React, {useState} from 'react';
 
 export default function ContactForm(){
     const [fullname, setFullName] = useState<string>('');
+    const [buttonText, setbuttonText] = useState<string>('Submit Form');
 
     const processForm = (e:React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setbuttonText('Loading');
         console.log(`The inputted name is ${fullname}`);
     }
 
@@ -28,7 +30,7 @@ return(
     </label>
 </div>
 <div>
-    <button className='bg-blue-600 text-white rounded m-4 p-4' type="submit">Send Now</button>
+    <button className='bg-blue-600 text-white rounded m-4 p-4' type="submit">{buttonText}</button>
 </div>
         </form>
     </div>
