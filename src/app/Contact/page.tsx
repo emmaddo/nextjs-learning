@@ -9,12 +9,17 @@ export default function ContactForm(){
         setisLoading(true);
         console.log(`The inputted name is ${fullname}`);
 
-        //micking an api call using setTimeout for demo
-        setTimeout(() => {
-            console.log(`A timeout just occured`); 
-            setisLoading(false);
+        //mimicking an api call using setTimeout for demo
+        try{
+            setTimeout(() => {
+                console.log(`A timeout just occured`); 
+                setisLoading(false);
+            }
+                ,1000);
         }
-            ,1000);
+        catch(error){
+console.error(error);
+        }
     }
 
     const processFullName = (e:React.ChangeEvent<HTMLInputElement>) => {
