@@ -10,7 +10,7 @@ return(
     <div id='wrapper' className='flex flex-col bg-gray-400 justify-center items-center'>
 
 {isOpen && 
-<div className='flex fixed bg-blue-400 justify-center items-center z-50 rounded'>
+<div className='flex fixed bg-blue-400 justify-center items-center rounded'>
     <p className='text-white text-2xl m-4 p-4'>This is a text in a modal</p>
 </div>}
         <p className='text-white text-2xl m-4 p-4'>Click this button to see a modal</p>
